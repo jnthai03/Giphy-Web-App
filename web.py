@@ -9,9 +9,7 @@ def get_giphy(search_term):
 
 @app.route('/')
 def index():
-    name = request.values.get('name', 'Nobody')
-    greeting = "Hello {}".format(name)
-    return render_template('index.html', greeting=greeting)
+    return render_template('index.html')
 
 @app.route('/about')
 def about():
