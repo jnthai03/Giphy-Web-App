@@ -1,7 +1,7 @@
 <html>
     <head>
-        <title>Python Project</title>
-        
+        <title>GIF Search</title>
+
         <!-- Bootstrap 4 CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css">
     </head>
@@ -25,38 +25,24 @@
         <!-- Jumbotron -->
         <div class="jumbotron">
             <div class="container">
-                <h1>{{ price }}</h1>
-                <p>I'm a student at CBS.</p>
-                <a href="#" class="btn btn-primary btn-lg">Learn more</a>
+                    <h1>{{ message }}</h1>
+                <a href="/">Back to search</a>
             </div>
         </div>
 
+        <!-- GIF Search Results -->
         <div class="container">
-            <!-- Columns -->
-            <div class="row">
-                <div class="col-md-4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-                    <p><a class="btn btn-secondary">View details</a></p>
+            <div class="card-columns">
+                {% for result in results %}
+                <div class="card">
+                  <a href="{{ result.url }}" target="_blank">
+                    <img class="card-img-top" src= "{{ result.media_url }}"" style="width:100%; height:auto;">
+                </a>
                 </div>
-                <div class="col-md-4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-                    <p><a class="btn btn-secondary">View details</a></p>
-                </div>
-                <div class="col-md-4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-                    <p><a class="btn btn-secondary">View details</a></p>
-                </div>
-            </div>
+                {% endfor %}
             
-            <!-- Footer -->
-            <hr>
-            <footer>
-                <p>© Company 2016</p>
-            </footer>
-
+            </div>
         </div>
+
     </body>
 </html>
